@@ -1,2 +1,2 @@
 from .Conta import Conta
-from .Contas import HistoryContas
+from .Contas import Contas
