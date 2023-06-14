@@ -1,19 +1,25 @@
 from datetime import datetime
-import datetime as dt
+
 class Conta:
-    def __init__(self,n_conta:str="",dataleitura:datetime=datetime.now(),nleitura:str="", valor:float=0,kwgasto:int=0) -> None:
-        self.__n_conta = n_conta
-        self.__dataleitura = dataleitura
-        self.__n_leitura=nleitura
-        self.__valor_pagar = valor
-        self.__data_pgto = dt.timedelta(days=20)+dataleitura
-        self.__kwGasto = kwgasto
+    def __init__(self,n_Conta:str='',dataLeitura:datetime=datetime.now(),n_Leitura:str='',kw_Gasto:int=0,valor_Pagar:float = 0.0,dataPagamento:datetime=datetime.now())-> None:
+        self.__n_Conta = n_Conta
+        self.__dataLeitura = dataLeitura
+        self.__n_Leitura = n_Leitura
+        self.__kw_Gasto = kw_Gasto
+        self.__valor_Pagar = valor_Pagar
+        self.__dataPagamento = dataPagamento
     
     def getDataLeitura(self):
-        return self.__dataleitura.strftime(" %d %m %Y ")
-    def getKwGatsto(self):
-        return self.__kwGasto
-    def getValorPagar(self):
-        return self.__valor_pagar
-    def getDadosConta(self):
-        pass
+        return self.__dataLeitura.strftime(" %d %m %Y")
+
+    def getDataPagamento(self):
+        return self.__dataPagamento.strftime(" %d %m %Y")
+
+    def getKwGasto(self) -> int:
+        return self.__kw_Gasto
+
+    def getValorPagar(self) -> float:
+        return self.__valor_Pagar
+
+    def getDadosConta(self) -> str:
+        return f"Conta: {self.__n_Conta}, Conta: {self.__dataLeitura}, Conta: {self.__n_Leitura}, Conta: {self.__kw_Gasto}, Conta: {self.__valor_Pagar}, Conta: {self.__dataPagamento}"

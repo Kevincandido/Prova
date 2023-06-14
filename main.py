@@ -1,9 +1,17 @@
-from Classes import Conta,HistoryContas
-from datetime import datetime as dt
+from Classes import Conta, Contas
+from datetime import datetime
 
 if __name__ == "__main__":
-    history = HistoryContas()
+    hContas = Contas()
+    
 
-    history.setConta(Conta("125254",dt.strptime("01/06/2023","%d/%m/%Y"),"001",200.0,100))
-    history.setConta(Conta("125254",dt.strptime("01/07/2023","%d/%m/%Y"),"002",250.0,150))
-    history.setConta(Conta("125254",dt.strptime("01/08/2023","%d/%m/%Y"),"003",50.0,50))
+    hContas.setConta(Conta('321312312',datetime.now(),'312313444',250,95.31,datetime.strptime('16/05/2023','%d/%m/%Y')))
+    hContas.setConta(Conta('321312312',datetime.now(),'312313444',230,93.31,datetime.strptime('16/06/2023','%d/%m/%Y')))
+    hContas.setConta(Conta('321312312',datetime.now(),'312313444',200,80.31,datetime.strptime('16/07/2023','%d/%m/%Y')))
+
+    print(hContas.getMediaKw())
+    print(hContas.getMesMaiorConsumo())
+    print(hContas.getMesMenorConsumo())
+    print(hContas.getValorMediaContas())
+    for c in hContas.getContas():
+        print(c)
